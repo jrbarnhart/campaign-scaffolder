@@ -6,12 +6,14 @@ import tseslint from "typescript-eslint";
 import { globalIgnores } from "eslint/config";
 import reactX from "eslint-plugin-react-x";
 import reactDom from "eslint-plugin-react-dom";
+import pluginRouter from "@tanstack/eslint-plugin-router";
 
 export default tseslint.config([
-  globalIgnores(["dist"]),
+  globalIgnores(["dist", "src/routeTree.gen.ts"]),
   {
     files: ["**/*.{ts,tsx}"],
     extends: [
+      pluginRouter.configs["flat/recommended"],
       js.configs.recommended,
       tseslint.configs.strictTypeChecked,
       reactHooks.configs["recommended-latest"],
