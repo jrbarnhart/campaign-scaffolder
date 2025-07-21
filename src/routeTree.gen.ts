@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RelationshipsIndexRouteImport } from './routes/relationships/index'
+import { Route as MapsIndexRouteImport } from './routes/maps/index'
+import { Route as CharactersIndexRouteImport } from './routes/characters/index'
+import { Route as CampaignsIndexRouteImport } from './routes/campaigns/index'
+import { Route as RelationshipsCreateRouteImport } from './routes/relationships/create'
+import { Route as MapsCreateRouteImport } from './routes/maps/create'
+import { Route as CharactersCreateRouteImport } from './routes/characters/create'
+import { Route as CampaignsCreateRouteImport } from './routes/campaigns/create'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RelationshipsIndexRoute = RelationshipsIndexRouteImport.update({
+  id: '/relationships/',
+  path: '/relationships/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MapsIndexRoute = MapsIndexRouteImport.update({
+  id: '/maps/',
+  path: '/maps/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CharactersIndexRoute = CharactersIndexRouteImport.update({
+  id: '/characters/',
+  path: '/characters/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampaignsIndexRoute = CampaignsIndexRouteImport.update({
+  id: '/campaigns/',
+  path: '/campaigns/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RelationshipsCreateRoute = RelationshipsCreateRouteImport.update({
+  id: '/relationships/create',
+  path: '/relationships/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MapsCreateRoute = MapsCreateRouteImport.update({
+  id: '/maps/create',
+  path: '/maps/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CharactersCreateRoute = CharactersCreateRouteImport.update({
+  id: '/characters/create',
+  path: '/characters/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampaignsCreateRoute = CampaignsCreateRouteImport.update({
+  id: '/campaigns/create',
+  path: '/campaigns/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/campaigns/create': typeof CampaignsCreateRoute
+  '/characters/create': typeof CharactersCreateRoute
+  '/maps/create': typeof MapsCreateRoute
+  '/relationships/create': typeof RelationshipsCreateRoute
+  '/campaigns': typeof CampaignsIndexRoute
+  '/characters': typeof CharactersIndexRoute
+  '/maps': typeof MapsIndexRoute
+  '/relationships': typeof RelationshipsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/campaigns/create': typeof CampaignsCreateRoute
+  '/characters/create': typeof CharactersCreateRoute
+  '/maps/create': typeof MapsCreateRoute
+  '/relationships/create': typeof RelationshipsCreateRoute
+  '/campaigns': typeof CampaignsIndexRoute
+  '/characters': typeof CharactersIndexRoute
+  '/maps': typeof MapsIndexRoute
+  '/relationships': typeof RelationshipsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/campaigns/create': typeof CampaignsCreateRoute
+  '/characters/create': typeof CharactersCreateRoute
+  '/maps/create': typeof MapsCreateRoute
+  '/relationships/create': typeof RelationshipsCreateRoute
+  '/campaigns/': typeof CampaignsIndexRoute
+  '/characters/': typeof CharactersIndexRoute
+  '/maps/': typeof MapsIndexRoute
+  '/relationships/': typeof RelationshipsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/campaigns/create'
+    | '/characters/create'
+    | '/maps/create'
+    | '/relationships/create'
+    | '/campaigns'
+    | '/characters'
+    | '/maps'
+    | '/relationships'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/campaigns/create'
+    | '/characters/create'
+    | '/maps/create'
+    | '/relationships/create'
+    | '/campaigns'
+    | '/characters'
+    | '/maps'
+    | '/relationships'
+  id:
+    | '__root__'
+    | '/'
+    | '/campaigns/create'
+    | '/characters/create'
+    | '/maps/create'
+    | '/relationships/create'
+    | '/campaigns/'
+    | '/characters/'
+    | '/maps/'
+    | '/relationships/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CampaignsCreateRoute: typeof CampaignsCreateRoute
+  CharactersCreateRoute: typeof CharactersCreateRoute
+  MapsCreateRoute: typeof MapsCreateRoute
+  RelationshipsCreateRoute: typeof RelationshipsCreateRoute
+  CampaignsIndexRoute: typeof CampaignsIndexRoute
+  CharactersIndexRoute: typeof CharactersIndexRoute
+  MapsIndexRoute: typeof MapsIndexRoute
+  RelationshipsIndexRoute: typeof RelationshipsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/relationships/': {
+      id: '/relationships/'
+      path: '/relationships'
+      fullPath: '/relationships'
+      preLoaderRoute: typeof RelationshipsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/maps/': {
+      id: '/maps/'
+      path: '/maps'
+      fullPath: '/maps'
+      preLoaderRoute: typeof MapsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/characters/': {
+      id: '/characters/'
+      path: '/characters'
+      fullPath: '/characters'
+      preLoaderRoute: typeof CharactersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campaigns/': {
+      id: '/campaigns/'
+      path: '/campaigns'
+      fullPath: '/campaigns'
+      preLoaderRoute: typeof CampaignsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/relationships/create': {
+      id: '/relationships/create'
+      path: '/relationships/create'
+      fullPath: '/relationships/create'
+      preLoaderRoute: typeof RelationshipsCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/maps/create': {
+      id: '/maps/create'
+      path: '/maps/create'
+      fullPath: '/maps/create'
+      preLoaderRoute: typeof MapsCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/characters/create': {
+      id: '/characters/create'
+      path: '/characters/create'
+      fullPath: '/characters/create'
+      preLoaderRoute: typeof CharactersCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campaigns/create': {
+      id: '/campaigns/create'
+      path: '/campaigns/create'
+      fullPath: '/campaigns/create'
+      preLoaderRoute: typeof CampaignsCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CampaignsCreateRoute: CampaignsCreateRoute,
+  CharactersCreateRoute: CharactersCreateRoute,
+  MapsCreateRoute: MapsCreateRoute,
+  RelationshipsCreateRoute: RelationshipsCreateRoute,
+  CampaignsIndexRoute: CampaignsIndexRoute,
+  CharactersIndexRoute: CharactersIndexRoute,
+  MapsIndexRoute: MapsIndexRoute,
+  RelationshipsIndexRoute: RelationshipsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
