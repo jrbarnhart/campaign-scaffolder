@@ -107,7 +107,7 @@ function RouteComponent() {
   return (
     <div className="relative h-svh">
       <div className="flex w-full justify-center p-4">
-        <section className="flex max-w-2xl justify-end gap-0.5 gap-1 rounded-md bg-neutral-700 p-1">
+        <section className="flex max-w-2xl justify-end gap-1 rounded-md bg-neutral-700 p-1">
           <h1 className="sr-only">Map Generator Toolbar</h1>
           <ControlBarButton toolTip="Pan">
             <Hand />
