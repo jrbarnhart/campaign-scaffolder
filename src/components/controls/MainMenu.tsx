@@ -8,7 +8,31 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 
-export default function MainMenu({ children }: { children?: React.ReactNode }) {
+type MainMenuProps = {
+  children?: React.ReactNode;
+};
+
+/**
+ * A dropdown menu component that uses Shadcn UI Dropdown Menu components.
+ * If no children are provided an example DropdownMenuItem will be rendered.
+ *
+ * @param {MainMenuProps} props - The props for the MainMenu component.
+ * @param {React.ReactNode} props.children - Child elements to render inside the menu. See examples.
+ * @returns {JSX.Element}
+ *
+ * @example
+ * // A MainMenu with a DropdownMenuItem child.
+ * <MainMenu>
+ *   <DropdownMenuItem>
+ *      Create New Document <DropdownMenuShortcut>⌘N</DropdownMenuShortcut>
+ *    </DropdownMenuItem>
+ * </MainMenu>
+ *
+ * @example
+ * // A MainMenu with no children.
+ * <MainMenu />
+ */
+export default function MainMenu({ children }: MainMenuProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
