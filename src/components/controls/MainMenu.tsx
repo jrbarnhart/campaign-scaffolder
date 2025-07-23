@@ -17,7 +17,7 @@ type MainMenuProps = {
  * If no children are provided an example DropdownMenuItem will be rendered.
  *
  * @param {MainMenuProps} props - The props for the MainMenu component.
- * @param {React.ReactNode} props.children - Child elements to render inside the menu. See examples.
+ * @param {React.ReactNode} props.children - Child elements to render inside the MainMenu. See examples.
  * @returns {JSX.Element}
  *
  * @example
