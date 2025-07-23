@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 
-export default function MainMenu() {
+export default function MainMenu({ children }: { children?: React.ReactNode }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -22,9 +22,11 @@ export default function MainMenu() {
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="ml-4">
-        <DropdownMenuItem>
-          New Map <DropdownMenuShortcut>⌘N</DropdownMenuShortcut>
-        </DropdownMenuItem>
+        {children || (
+          <DropdownMenuItem>
+            Exmaple Menu Item <DropdownMenuShortcut>⌘E</DropdownMenuShortcut>
+          </DropdownMenuItem>
+        )}
       </DropdownMenuContent>
     </DropdownMenu>
   );
