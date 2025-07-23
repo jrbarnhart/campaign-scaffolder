@@ -3,6 +3,10 @@ import ControlBarButton from "@/components/controls/ControlBarButton";
 import MainMenu from "@/components/controls/MainMenu";
 import UndoControls from "@/components/controls/UndoControls";
 import ZoomControls from "@/components/controls/ZoomControls";
+import {
+  DropdownMenuItem,
+  DropdownMenuShortcut,
+} from "@/components/ui/dropdown-menu";
 
 import { createFileRoute } from "@tanstack/react-router";
 import { Hand, MousePointer, Play, Settings } from "lucide-react";
@@ -31,7 +35,11 @@ function RouteComponent() {
         </ControlBar>
       </div>
       <div className="absolute bottom-4 left-4 md:top-4">
-        <MainMenu />
+        <MainMenu>
+          <DropdownMenuItem>
+            Create New Map <DropdownMenuShortcut>⌘N</DropdownMenuShortcut>
+          </DropdownMenuItem>
+        </MainMenu>
       </div>
       <div className="absolute bottom-4 left-20 md:left-4">
         <ZoomControls />
