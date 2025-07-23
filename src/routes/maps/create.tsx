@@ -34,18 +34,18 @@ function RouteComponent() {
           </ControlBarButton>
         </ControlBar>
       </div>
+      <div className="absolute bottom-4 left-20 md:left-4">
+        <ZoomControls />
+      </div>
+      <div className="absolute right-4 bottom-4">
+        <UndoControls />
+      </div>
       <div className="absolute bottom-4 left-4 md:top-4">
         <MainMenu>
           <DropdownMenuItem>
             Create New Map <DropdownMenuShortcut>⌘N</DropdownMenuShortcut>
           </DropdownMenuItem>
         </MainMenu>
-      </div>
-      <div className="absolute bottom-4 left-20 md:left-4">
-        <ZoomControls />
-      </div>
-      <div className="absolute right-4 bottom-4">
-        <UndoControls />
       </div>
     </div>
   );
