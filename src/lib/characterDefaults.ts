@@ -131,8 +131,7 @@ export const defaultGoodTraits = [
   "Inspires courage in others.",
   "Is a good listener.",
   "Believes in the inherent good of life.",
-] as const;
-export type DefaultGoodTrait = typeof defaultGoodTraits;
+];
 
 export const defaultNeutralTraits = [
   "Values personal freedom above all else.",
