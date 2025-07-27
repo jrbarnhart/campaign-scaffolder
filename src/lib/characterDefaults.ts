@@ -8,6 +8,14 @@ export const defaultSexes = [
 ] as const;
 export type DefaultSexes = typeof defaultSexes;
 
+export const defaultPronouns = [
+  ["she", "her"],
+  ["they", "them"],
+  ["any", "all"],
+  ["he", "him"],
+] as const;
+export type DefaultPronouns = typeof defaultPronouns;
+
 export const defaultRaces = [
   "Dwarf",
   "Orc",
