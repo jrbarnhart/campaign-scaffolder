@@ -5,16 +5,14 @@ export const defaultSexes = [
   "Other",
   "Eldritch",
   "Male",
-] as const;
-export type DefaultSex = typeof defaultSexes;
+];
 
 export const defaultPronouns = [
   ["she", "her"],
   ["they", "them"],
   ["any", "all"],
   ["he", "him"],
-] as const;
-export type DefaultPronoun = typeof defaultPronouns;
+];
 
 export const defaultRaces = [
   "Dwarf",
@@ -26,8 +24,7 @@ export const defaultRaces = [
   "Elf",
   "Troglodyte",
   "Human",
-] as const;
-export type DefaultRace = typeof defaultRaces;
+];
 
 export const defaultAlignments = [
   "Lawful Good",
@@ -39,8 +36,7 @@ export const defaultAlignments = [
   "Lawful Evil",
   "Neutral Evil",
   "Chaotic Evil",
-] as const;
-export type DefaultAlignment = typeof defaultAlignments;
+];
 
 export const defaultAbilities = [
   "Strength",
@@ -49,8 +45,7 @@ export const defaultAbilities = [
   "Intellect",
   "Wisdom",
   "Charisma",
-] as const;
-export type DefaultAbility = typeof defaultAbilities;
+];
 
 export const defaultQuirks = [
   "They constantly hum a tune under their breath that seems oddly familiar.",
@@ -113,8 +108,7 @@ export const defaultQuirks = [
   "They communicate primarily through a series of elaborate hand gestures and facial contortions, sometimes accompanied by strange noises.",
   "They have a pet rock they dote on more than most people care for their children, dressing it in tiny outfits and cooing at it.",
   "They frequently stop mid-sentence to listen intently to sounds only they can hear, often nodding in agreement or shaking their head in despair.",
-] as const;
-export type DefaultQuirk = typeof defaultQuirks;
+];
 
 export const defaultGoodTraits = [
   "Always keeps their promises.",
@@ -161,9 +155,7 @@ export const defaultNeutralTraits = [
   "Is resilient in the face of change.",
   "Keeps their own counsel.",
   "Is opportunistic.",
-] as const;
-export type DefaultNeutralTrait = typeof defaultNeutralTraits;
-
+];
 export const defaultLawfulTraits = [
   "Adheres strictly to rules and laws.",
   "Values tradition and established order.",
@@ -185,8 +177,7 @@ export const defaultLawfulTraits = [
   "Is a pillar of the community.",
   "Avoids impulsive actions.",
   "Sacrifices personal freedom for the greater good.",
-] as const;
-export type DefaultLawfulTrait = typeof defaultLawfulTraits;
+];
 
 export const defaultChaoticTraits = [
   "Values individual freedom above all laws.",
@@ -209,8 +200,7 @@ export const defaultChaoticTraits = [
   "Embraces disorder.",
   "Is not bound by promises or contracts.",
   "Prefers anarchy over tyranny.",
-] as const;
-export type DefaultChaoticTrait = typeof defaultChaoticTraits;
+];
 
 export const defaultEvilTraits = [
   "Is completely self-serving.",
@@ -233,8 +223,7 @@ export const defaultEvilTraits = [
   "Disregards moral boundaries.",
   "Is hateful and prejudiced.",
   "Corrupts anything they touch.",
-] as const;
-export type DefaultEvilTrait = typeof defaultEvilTraits;
+];
 
 export type NPC = {
   name: string;
