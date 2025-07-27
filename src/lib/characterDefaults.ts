@@ -3,7 +3,7 @@ export const defaultSexes = [
   "Intersex",
   "None",
   "Other",
-  "Eldritch horror",
+  "Eldritch",
   "Male",
 ] as const;
 export type DefaultSexes = typeof defaultSexes;
