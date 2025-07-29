@@ -1,14 +1,3 @@
-// export type NPC = {
-//   name: string;
-//   sex: string;
-//   pronouns: [string, string];
-//   race: string;
-//   abilities: { name: string; value: number }[];
-//   alignment: string;
-//   quirk: string;
-//   personality: string[];
-// };
-
 import { z } from "zod";
 
 const shortString = z.string().trim().min(1).max(64);
