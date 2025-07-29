@@ -7,7 +7,7 @@ export const defaultSexes = [
   "Male",
 ];
 
-export const defaultPronouns = [
+export const defaultPronouns: [string, string][] = [
   ["she", "her"],
   ["they", "them"],
   ["any", "all"],
@@ -229,7 +229,7 @@ export type NPC = {
   sex: string;
   pronouns: [string, string];
   race: string;
-  abilities: { [key: string]: number }[];
+  abilities: { name: string; value: number }[];
   alignment: string;
   quirk: string;
   personality: string[];
