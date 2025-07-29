@@ -1,7 +1,8 @@
 import MainMenu from "@/components/controls/MainMenu";
 import { Button } from "@/components/ui/button";
 import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
-import type { NPC } from "@/lib/characterDefaults";
+import type { NPC } from "@/lib/zodSchemas/npcSchema";
+
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 

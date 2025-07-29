@@ -11,8 +11,8 @@ import {
   defaultQuirks,
   defaultRaces,
   defaultSexes,
-  type NPC,
 } from "@/lib/characterDefaults";
+import type { NPC } from "../zodSchemas/npcSchema";
 
 // For now this just generates random NPC's by selecting random elements from
 // the arrays in characterDefaults.ts

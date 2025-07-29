@@ -223,14 +223,3 @@ export const defaultEvilTraits = [
   "Is hateful and prejudiced.",
   "Corrupts anything they touch.",
 ];
-
-export type NPC = {
-  name: string;
-  sex: string;
-  pronouns: [string, string];
-  race: string;
-  abilities: { name: string; value: number }[];
-  alignment: string;
-  quirk: string;
-  personality: string[];
-};
