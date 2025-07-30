@@ -1,6 +1,5 @@
 import { getManyFromArray, getRandomArrayElement } from "../arrayUtils";
 import {
-  defaultAbilities,
   defaultAlignments,
   defaultChaoticTraits,
   defaultEvilTraits,
@@ -22,10 +21,7 @@ export default function generateNpc(): NPC {
 
   const sex = getRandomArrayElement(defaultSexes) || "Error";
 
-  const abilities = defaultAbilities.map((ability) => ({
-    name: ability,
-    value: Math.floor(Math.random() * 20),
-  }));
+  const randomAbilityScore = () => Math.floor(Math.random() * 20 + 1);
 
   const alignment = getRandomArrayElement(defaultAlignments) || "Error";
 
@@ -70,7 +66,12 @@ export default function generateNpc(): NPC {
     name,
     race,
     sex,
-    abilities,
+    strength: randomAbilityScore(),
+    dexterity: randomAbilityScore(),
+    constitution: randomAbilityScore(),
+    intellect: randomAbilityScore(),
+    wisdom: randomAbilityScore(),
+    charisma: randomAbilityScore(),
     alignment,
     personality,
     quirk,
