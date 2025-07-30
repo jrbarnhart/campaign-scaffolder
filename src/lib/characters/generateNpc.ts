@@ -79,7 +79,8 @@ export default function generateNpc(): NPC {
     abilities,
     alignment,
     personality,
-    pronouns,
+    pronounSubject: pronouns[0],
+    pronounObject: pronouns[1],
     quirk,
   };
   return npc;
