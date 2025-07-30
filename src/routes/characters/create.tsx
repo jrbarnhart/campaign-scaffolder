@@ -23,12 +23,12 @@ function RouteComponent() {
   };
 
   return (
-    <div className="relative h-svh overflow-hidden">
-      <section className="space-y-4 overflow-auto p-2">
+    <div className="relative h-svh">
+      <section className="space-y-4 overflow-y-auto p-2">
         <h1>Create a New NPC</h1>
         <CreateNpcForm />
       </section>
-      <div className="absolute bottom-4 left-4 md:top-4">
+      <div className="fixed bottom-4 left-4 md:top-4">
         <MainMenu>
           <DropdownMenuItem onClick={handleCreateNewCharacter}>
             Create New Character <DropdownMenuShortcut>⌘N</DropdownMenuShortcut>
