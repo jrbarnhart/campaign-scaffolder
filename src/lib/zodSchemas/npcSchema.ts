@@ -7,7 +7,8 @@ const longString = z.string().trim().min(1).max(512);
 export const npcSchema = z.object({
   name: mediumString,
   sex: shortString,
-  pronouns: z.tuple([shortString, shortString]),
+  pronoun: shortString,
+  pronounObject: shortString,
   race: shortString,
   abilities: z.array(z.object({ name: shortString, value: z.number().int() })),
   alignment: shortString,
