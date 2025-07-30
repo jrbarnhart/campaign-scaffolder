@@ -7,13 +7,6 @@ export const defaultSexes = [
   "Male",
 ];
 
-export const defaultPronouns: [string, string][] = [
-  ["she", "her"],
-  ["they", "them"],
-  ["any", "all"],
-  ["he", "him"],
-];
-
 export const defaultRaces = [
   "Dwarf",
   "Orc",

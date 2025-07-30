@@ -7,7 +7,6 @@ import {
   defaultGoodTraits,
   defaultLawfulTraits,
   defaultNeutralTraits,
-  defaultPronouns,
   defaultQuirks,
   defaultRaces,
   defaultSexes,
@@ -65,11 +64,6 @@ export default function generateNpc(): NPC {
     personalityTraitCount,
   ) || ["Error"];
 
-  const pronouns = getRandomArrayElement(defaultPronouns) || [
-    "Unknown",
-    "Error",
-  ];
-
   const quirk = getRandomArrayElement(defaultQuirks) || "Error";
 
   const npc: NPC = {
@@ -79,8 +73,6 @@ export default function generateNpc(): NPC {
     abilities,
     alignment,
     personality,
-    pronounSubject: pronouns[0],
-    pronounObject: pronouns[1],
     quirk,
   };
   return npc;
