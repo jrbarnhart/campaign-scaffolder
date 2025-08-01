@@ -4,7 +4,7 @@ import { useFieldContext } from "@/contexts/reactFormContexts";
 import getZodErrorMessage from "@/lib/zodSchemas/getZodErrorMessage";
 
 export function AbilityField({ label }: { label: string; list?: string }) {
-  const field = useFieldContext<string>();
+  const field = useFieldContext<number>();
   return (
     <Label className="flex-col items-start gap-1">
       <div>{label}</div>
@@ -14,7 +14,7 @@ export function AbilityField({ label }: { label: string; list?: string }) {
         max={30}
         value={field.state.value}
         onChange={(e) => {
-          field.handleChange(e.target.value);
+          field.handleChange(parseInt(e.target.value));
         }}
       />
       {field.state.meta.errors.length > 0 && (
