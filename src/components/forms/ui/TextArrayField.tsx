@@ -4,27 +4,26 @@ import { Input } from "@/components/ui/input";
 import { useFieldContext } from "@/contexts/reactFormContexts";
 
 export function TextArrayField({ label }: { label: string }) {
-  // Get the field context for the array field
   const field = useFieldContext<string[]>();
 
   return (
     <div>
       <label>{label}</label>
-      {field.state.value.map((_, i) => {
+      {field.state.value.map((_, index) => {
         return (
-          <div key={`item-${i.toString()}`} className="mb-2 flex gap-2">
+          <div key={`item-${index.toString()}`} className="mb-2 flex gap-2">
             <Input
-              value={field.state.value[i] || ""}
+              value={field.state.value[index] || ""}
               onChange={(e) => {
                 const newArray = [...field.state.value];
-                newArray[i] = e.target.value;
+                newArray[index] = e.target.value;
                 field.handleChange(newArray);
               }}
             />
             <Button
               onClick={() => {
                 const newArray = field.state.value.filter(
-                  (_, index) => index !== i,
+                  (_, index) => index !== index,
                 );
                 field.handleChange(newArray);
               }}
