@@ -129,7 +129,7 @@ export default function CreateNpcForm() {
         <form.AppField
           name="personality"
           children={(field) => (
-            <field.TextArrayField label="Personality Traits" />
+            <field.TextArrayField label="Personality Trait" />
           )}
           validators={{ onBlur: npcSchema.shape.personality }}
         />
