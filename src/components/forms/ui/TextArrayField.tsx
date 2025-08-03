@@ -41,7 +41,6 @@ export function TextArrayField({ label }: { label: string }) {
                 Remove
               </Button>
             </div>
-            {/* If there is an error in errors at the same index as the value index then display it */}
             {field.state.meta.errors
               .filter((error) => valueIndex === getZodArrayErrorPath(error))
               .map((error, errorIndex) => (
