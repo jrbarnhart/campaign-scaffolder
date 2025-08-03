@@ -1,5 +1,6 @@
 import CreateNpcForm from "@/components/forms/characters/CreateNpcForm";
 import { Button } from "@/components/ui/button";
+import generateNpc from "@/lib/characters/generateNpc";
 import type { NPC } from "@/lib/zodSchemas/npcSchema";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
@@ -68,12 +69,31 @@ function RouteComponent() {
             </section>
             <section>
               <h1>Stats</h1>
-              <p>Str {npc.strength}</p>
-              <p>Dex {npc.dexterity}</p>
-              <p>Con {npc.constitution}</p>
-              <p>Int {npc.intelligence}</p>
-              <p>Wis {npc.wisdom}</p>
-              <p>Cha {npc.charisma}</p>
+              <div className="grid grid-cols-3">
+                <p>Str {npc.strength}</p>
+                <p>Dex {npc.dexterity}</p>
+                <p>Con {npc.constitution}</p>
+                <p>Int {npc.intelligence}</p>
+                <p>Wis {npc.wisdom}</p>
+                <p>Cha {npc.charisma}</p>
+              </div>
+            </section>
+            <section>
+              <Button
+                onClick={() => {
+                  const newNpc = generateNpc();
+                  setNpc(newNpc);
+                }}
+                variant={"secondary"}
+                className="w-full border-2"
+              >
+                Generate NPC
+              </Button>
+              <h1>Options</h1>
+              <p>
+                {/* Options go here but I need to handle giving options to
+                generateNpc to make them work */}
+              </p>
             </section>
           </div>
         )}
