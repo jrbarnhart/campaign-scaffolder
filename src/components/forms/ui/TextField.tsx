@@ -7,10 +7,10 @@ import getZodErrorMessage from "@/lib/zodErrors/getZodErrorMessage";
 export function TextField({ label, list }: { label: string; list?: string }) {
   const field = useFieldContext<string>();
   return (
-    <div>
+    <div className="space-y-1">
       <Label
         className={cn(
-          !field.state.meta.isValid && "border-destructive",
+          !field.state.meta.isValid && "text-destructive",
           "flex-col items-start gap-1",
         )}
         htmlFor={`field-${field.name}`}
@@ -25,6 +25,7 @@ export function TextField({ label, list }: { label: string; list?: string }) {
           field.handleChange(e.target.value);
         }}
         onBlur={field.handleBlur}
+        className={cn(!field.state.meta.isValid && "border-destructive")}
       />
       {field.state.meta.errors.length > 0 && (
         <div className="text-destructive">
