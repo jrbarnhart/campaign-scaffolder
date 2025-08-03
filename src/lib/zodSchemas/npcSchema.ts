@@ -13,7 +13,7 @@ export const npcSchema = z.object({
   strength: abilityScore,
   dexterity: abilityScore,
   constitution: abilityScore,
-  intellect: abilityScore,
+  intelligence: abilityScore,
   wisdom: abilityScore,
   charisma: abilityScore,
   alignment: shortString,

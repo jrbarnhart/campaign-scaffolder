@@ -14,7 +14,7 @@ const defaultNpc: NPC = {
   strength: 0,
   dexterity: 0,
   constitution: 0,
-  intellect: 0,
+  intelligence: 0,
   wisdom: 0,
   charisma: 0,
   personality: [],
@@ -113,9 +113,9 @@ export default function CreateNpcForm() {
           validators={{ onChange: npcSchema.shape.constitution }}
         />
         <form.AppField
-          name="intellect"
-          children={(field) => <field.AbilityField label="Intellect" />}
-          validators={{ onChange: npcSchema.shape.intellect }}
+          name="intelligence"
+          children={(field) => <field.AbilityField label="Intelligence" />}
+          validators={{ onChange: npcSchema.shape.intelligence }}
         />
         <form.AppField
           name="wisdom"

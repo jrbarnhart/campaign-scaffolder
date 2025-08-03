@@ -69,7 +69,7 @@ export default function generateNpc(): NPC {
     strength: randomAbilityScore(),
     dexterity: randomAbilityScore(),
     constitution: randomAbilityScore(),
-    intellect: randomAbilityScore(),
+    intelligence: randomAbilityScore(),
     wisdom: randomAbilityScore(),
     charisma: randomAbilityScore(),
     alignment,

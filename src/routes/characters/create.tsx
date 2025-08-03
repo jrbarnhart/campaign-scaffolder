@@ -16,7 +16,7 @@ const defaultNpc: NPC = {
   strength: 0,
   dexterity: 0,
   constitution: 0,
-  intellect: 0,
+  intelligence: 0,
   wisdom: 0,
   charisma: 0,
   personality: [],
@@ -71,7 +71,7 @@ function RouteComponent() {
               <p>Str {npc.strength}</p>
               <p>Dex {npc.dexterity}</p>
               <p>Con {npc.constitution}</p>
-              <p>Int {npc.intellect}</p>
+              <p>Int {npc.intelligence}</p>
               <p>Wis {npc.wisdom}</p>
               <p>Cha {npc.charisma}</p>
             </section>
