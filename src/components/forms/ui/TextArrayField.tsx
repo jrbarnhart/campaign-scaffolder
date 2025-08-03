@@ -69,6 +69,8 @@ export function TextArrayField({ label }: { label: string }) {
             field.pushValue("");
           }}
           type="button"
+          variant={"secondary"}
+          className="w-full border-2"
         >
           Add {label}
         </Button>
