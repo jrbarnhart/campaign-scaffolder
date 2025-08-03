@@ -44,7 +44,9 @@ export default function CreateNpcForm() {
         <form.AppField
           name="name"
           children={(field) => <field.TextField label="Name" />}
-          validators={{ onBlur: npcSchema.shape.name }}
+          validators={{
+            onChange: npcSchema.shape.name,
+          }}
         />
         {/* Race */}
         <form.AppField
@@ -59,7 +61,7 @@ export default function CreateNpcForm() {
               </datalist>
             </>
           )}
-          validators={{ onBlur: npcSchema.shape.race }}
+          validators={{ onChange: npcSchema.shape.race }}
         />
         {/* Sex */}
         <form.AppField
@@ -74,7 +76,7 @@ export default function CreateNpcForm() {
               </datalist>
             </>
           )}
-          validators={{ onBlur: npcSchema.shape.sex }}
+          validators={{ onChange: npcSchema.shape.sex }}
         />
         {/* Alignment */}
         <form.AppField
@@ -92,38 +94,38 @@ export default function CreateNpcForm() {
               </datalist>
             </>
           )}
-          validators={{ onBlur: npcSchema.shape.alignment }}
+          validators={{ onChange: npcSchema.shape.alignment }}
         />
         {/* Abilities */}
         <form.AppField
           name="strength"
           children={(field) => <field.AbilityField label="Strength" />}
-          validators={{ onBlur: npcSchema.shape.strength }}
+          validators={{ onChange: npcSchema.shape.strength }}
         />
         <form.AppField
           name="dexterity"
           children={(field) => <field.AbilityField label="Dexterity" />}
-          validators={{ onBlur: npcSchema.shape.dexterity }}
+          validators={{ onChange: npcSchema.shape.dexterity }}
         />
         <form.AppField
           name="constitution"
           children={(field) => <field.AbilityField label="Constitution" />}
-          validators={{ onBlur: npcSchema.shape.constitution }}
+          validators={{ onChange: npcSchema.shape.constitution }}
         />
         <form.AppField
           name="intellect"
           children={(field) => <field.AbilityField label="Intellect" />}
-          validators={{ onBlur: npcSchema.shape.intellect }}
+          validators={{ onChange: npcSchema.shape.intellect }}
         />
         <form.AppField
           name="wisdom"
           children={(field) => <field.AbilityField label="Wisdom" />}
-          validators={{ onBlur: npcSchema.shape.wisdom }}
+          validators={{ onChange: npcSchema.shape.wisdom }}
         />
         <form.AppField
           name="charisma"
           children={(field) => <field.AbilityField label="Charisma" />}
-          validators={{ onBlur: npcSchema.shape.charisma }}
+          validators={{ onChange: npcSchema.shape.charisma }}
         />
         {/* Personality Traits */}
         <form.AppField
@@ -131,13 +133,15 @@ export default function CreateNpcForm() {
           children={(field) => (
             <field.TextArrayField label="Personality Trait" />
           )}
-          validators={{ onBlur: npcSchema.shape.personality }}
+          validators={{
+            onChange: npcSchema.shape.personality,
+          }}
         />
         {/* Quirk */}
         <form.AppField
           name="quirk"
           children={(field) => <field.TextField label="Quirk" />}
-          validators={{ onBlur: npcSchema.shape.quirk }}
+          validators={{ onChange: npcSchema.shape.quirk }}
         />
         {/* Submit */}
         <form.SubmitButton label="Submit" />
