@@ -16,7 +16,9 @@ export function TextArrayField({ label }: { label: string }) {
     <div className="space-y-1">
       <p className="text-sm leading-none font-semibold">{label}s</p>
       <div className="space-y-2">
-        {field.state.value.length === 0 && <p>No {label}s exist yet.</p>}
+        {field.state.value.length === 0 && (
+          <p className="text-muted-foreground italic">No {label}s exist yet.</p>
+        )}
         {field.state.value.map((_, valueIndex) => {
           return (
             <div key={`item-${valueIndex.toString()}`} className="space-y-1">
