@@ -2,7 +2,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useFieldContext } from "@/contexts/reactFormContexts";
 import { cn } from "@/lib/utils";
-import getZodErrorMessage from "@/lib/zodSchemas/getZodErrorMessage";
+import getZodErrorMessage from "@/lib/zodErrors/getZodErrorMessage";
 
 export function TextField({ label, list }: { label: string; list?: string }) {
   const field = useFieldContext<string>();

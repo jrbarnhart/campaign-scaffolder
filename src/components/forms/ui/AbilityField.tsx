@@ -1,7 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useFieldContext } from "@/contexts/reactFormContexts";
-import getZodErrorMessage from "@/lib/zodSchemas/getZodErrorMessage";
+import getZodErrorMessage from "@/lib/zodErrors/getZodErrorMessage";
 
 export function AbilityField({ label }: { label: string; list?: string }) {
   const field = useFieldContext<number>();

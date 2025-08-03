@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useFieldContext } from "@/contexts/reactFormContexts";
-import getZodErrorMessage from "@/lib/zodSchemas/getZodErrorMessage";
+import getZodErrorMessage from "@/lib/zodErrors/getZodErrorMessage";
 
 function getArrayErrorIndex(error: unknown): number | undefined {
   const errorExists = error;
