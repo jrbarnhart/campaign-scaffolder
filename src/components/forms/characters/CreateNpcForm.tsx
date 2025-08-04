@@ -5,29 +5,23 @@ import {
   defaultRaces,
   defaultSexes,
 } from "@/lib/characterDefaults";
+import type { SetStateAction } from "react";
 
-const defaultNpc: NPC = {
-  name: "",
-  race: "",
-  sex: "",
-  alignment: "",
-  strength: 0,
-  dexterity: 0,
-  constitution: 0,
-  intelligence: 0,
-  wisdom: 0,
-  charisma: 0,
-  personality: [],
-  quirk: "",
-};
-
-export default function CreateNpcForm() {
+export default function CreateNpcForm({
+  npc,
+  setNpc,
+  setEditOpen,
+}: {
+  npc: NPC;
+  setNpc: React.Dispatch<SetStateAction<NPC>>;
+  setEditOpen: React.Dispatch<SetStateAction<boolean>>;
+}) {
   const form = useAppForm({
-    defaultValues: defaultNpc,
+    defaultValues: npc,
     validators: { onSubmit: npcSchema },
     onSubmit: ({ value }) => {
-      // Handle submit here
-      console.log(value);
+      setNpc(value);
+      setEditOpen(false);
     },
   });
 
@@ -144,7 +138,7 @@ export default function CreateNpcForm() {
           validators={{ onChange: npcSchema.shape.quirk }}
         />
         {/* Submit */}
-        <form.SubmitButton label="Submit" />
+        <form.SubmitButton label="Save" />
       </form.AppForm>
     </form>
   );
