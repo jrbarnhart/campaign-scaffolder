@@ -1,8 +1,9 @@
 import NpcInfo from "@/components/characters/NpcInfo";
 import CreateNpcForm from "@/components/forms/characters/CreateNpcForm";
 import { Button } from "@/components/ui/button";
+import useLocalStorage from "@/hooks/useLocalStorage";
 import generateNpc from "@/lib/characters/generateNpc";
-import type { NPC } from "@/lib/zodSchemas/npcSchema";
+import { npcSchema, type NPC } from "@/lib/zodSchemas/npcSchema";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
@@ -27,7 +28,11 @@ const defaultNpc: NPC = {
 
 function RouteComponent() {
   const [editOpen, setEditOpen] = useState(false);
-  const [npc, setNpc] = useState<NPC>(defaultNpc);
+  const [npc, setNpc] = useLocalStorage({
+    key: "draftNpc",
+    schema: npcSchema,
+    defaultValue: defaultNpc,
+  });
 
   return (
     <div className="flex h-svh flex-col overflow-hidden">
