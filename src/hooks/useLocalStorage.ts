@@ -14,11 +14,21 @@ export default function useLocalStorage<T>({
   defaultValue,
 }: UseLocalStorageProps<T>): [T, React.Dispatch<SetStateAction<T>>] {
   // Create react state initialized to local storage val or default val
-  const existingItemString = localStorage.getItem(key);
-  const parseResults = schema.safeParse(JSON.parse(existingItemString || "{}"));
-  const [item, setItem] = useState(
-    parseResults.success ? parseResults.data : defaultValue,
-  );
+  const [item, setItem] = useState(() => {
+    try {
+      const existingItemString = localStorage.getItem(key);
+      const parseResult = schema.safeParse(
+        JSON.parse(existingItemString || "{}"),
+      );
+      return parseResult.success ? parseResult.data : defaultValue;
+    } catch (error) {
+      console.error(
+        `There was an error while parsing ${key} in localStorage.`,
+        error,
+      );
+      return defaultValue;
+    }
+  });
 
   // When this state is changed, update the local state to match it
   useEffect(() => {
