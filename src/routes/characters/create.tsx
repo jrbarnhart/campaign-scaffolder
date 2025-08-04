@@ -56,7 +56,7 @@ function RouteComponent() {
           <div>
             <NpcInfo npc={npc} />
             {/* NPC Generation Controls */}
-            <section>
+            <section className="space-y-2">
               <Button
                 onClick={() => {
                   const newNpc = generateNpc();
@@ -66,6 +66,9 @@ function RouteComponent() {
                 className="w-full border-2"
               >
                 Generate NPC
+              </Button>
+              <Button className="w-full border-2" variant={"secondary"}>
+                Save NPC
               </Button>
               <h1>Options</h1>
               <p>
