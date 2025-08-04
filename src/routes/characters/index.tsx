@@ -34,19 +34,7 @@ function RouteComponent() {
                 <p>Race: {npc.race}</p>
                 {/* Sex */}
                 <p>Sex: {npc.sex}</p>
-                {/* Pronouns */}
-                <p>
-                  Pronouns:{" "}
-                  {`${npc.pronouns[0][0].toUpperCase() + npc.pronouns[0].slice(1)}/${npc.pronouns[1][0].toUpperCase() + npc.pronouns[1].slice(1)} `}
-                </p>
                 {/* Abilities */}
-                <div>
-                  {npc.abilities.map((ability, index) => (
-                    <p key={`${ability.name}-${index.toString()}`}>
-                      {ability.name}: {ability.value}
-                    </p>
-                  ))}
-                </div>
                 {/* Alignment */}
                 <p>Alignment: {npc.alignment}</p>
                 {/* Personality Traits */}
