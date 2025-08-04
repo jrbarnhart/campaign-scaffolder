@@ -1,5 +1,5 @@
 export const storageKeys = {
-  npcs: "npcs",
+  draftNpc: "draftNpc",
 } as const;
 
 export type StorageKey = (typeof storageKeys)[keyof typeof storageKeys];
