@@ -30,12 +30,11 @@ function RouteComponent() {
   const [npc, setNpc] = useState<NPC>(defaultNpc);
 
   return (
-    <div className="relative h-svh">
+    <div className="flex h-svh flex-col overflow-hidden">
       {/* Tab controls for toggling edit form */}
-      <section className="space-y-4 overflow-y-auto p-2">
+      <section className="space-y-4 p-2">
         <div className="grid grid-cols-2">
           <Button
-            className="grow"
             onClick={() => {
               setEditOpen(false);
             }}
@@ -43,7 +42,6 @@ function RouteComponent() {
             Generate
           </Button>
           <Button
-            className="grow"
             onClick={() => {
               setEditOpen(true);
             }}
@@ -51,6 +49,9 @@ function RouteComponent() {
             Edit
           </Button>
         </div>
+      </section>
+
+      <section className="overflow-y-auto p-2">
         {!editOpen && (
           <div>
             <NpcInfo npc={npc} />
