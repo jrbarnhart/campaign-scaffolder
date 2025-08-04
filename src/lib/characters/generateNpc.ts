@@ -9,7 +9,7 @@ import {
   defaultQuirks,
   defaultRaces,
   defaultSexes,
-} from "@/lib/characterDefaults";
+} from "@/lib/characters/characterDefaults";
 import type { NPC } from "../zodSchemas/npcSchema";
 
 // For now this just generates random NPC's by selecting random elements from

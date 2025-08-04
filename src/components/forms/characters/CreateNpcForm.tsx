@@ -4,7 +4,7 @@ import {
   defaultAlignments,
   defaultRaces,
   defaultSexes,
-} from "@/lib/characterDefaults";
+} from "@/lib/characters/characterDefaults";
 import type { SetStateAction } from "react";
 
 export default function CreateNpcForm({
