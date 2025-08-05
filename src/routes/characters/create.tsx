@@ -3,28 +3,14 @@ import CreateNpcForm from "@/components/forms/characters/CreateNpcForm";
 import { Button } from "@/components/ui/button";
 import useLocalStorage from "@/hooks/useLocalStorage";
 import generateNpc from "@/lib/characters/generateNpc";
-import { npcSchema, type NPC } from "@/lib/zodSchemas/npcSchema";
+import { defaultNpc } from "@/lib/defaultData";
+import { npcSchema } from "@/lib/zodSchemas/npcSchema";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
 export const Route = createFileRoute("/characters/create")({
   component: RouteComponent,
 });
-
-const defaultNpc: NPC = {
-  name: "",
-  race: "",
-  sex: "",
-  alignment: "",
-  strength: 0,
-  dexterity: 0,
-  constitution: 0,
-  intelligence: 0,
-  wisdom: 0,
-  charisma: 0,
-  personality: [],
-  quirk: "",
-};
 
 function RouteComponent() {
   const [editOpen, setEditOpen] = useState(false);
