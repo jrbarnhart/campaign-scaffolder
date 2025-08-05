@@ -1,18 +1,16 @@
 import MainMenu from "@/components/controls/MainMenu";
 import { Button } from "@/components/ui/button";
 import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
-import type { NPC } from "@/lib/zodSchemas/npcSchema";
-
+import useLocalNpcs from "@/contexts/localStorage/npcs/useLocalNpcs";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
 
 export const Route = createFileRoute("/characters/")({
   component: RouteComponent,
 });
 
 function RouteComponent() {
-  // TODO: Replace with local storage hook
-  const [npcs, setNpcs] = useState<NPC[]>([]);
+  // Get the local npcs context
+  const { localNpcs } = useLocalNpcs();
 
   return (
     <div className="relative h-svh overflow-hidden">
@@ -25,8 +23,8 @@ function RouteComponent() {
         </div>
         {/* List that renders NPC's */}
         <ul className="grid gap-3">
-          {npcs.length > 0 ? (
-            npcs.map((npc, index) => (
+          {localNpcs.length > 0 ? (
+            localNpcs.map((npc, index) => (
               <li key={`npc-#${index.toString()}`} className="bg-pink-300">
                 {/* Name */}
                 <p>Name: {npc.name}</p>
@@ -48,6 +46,7 @@ function RouteComponent() {
               </li>
             ))
           ) : (
+            // Alternative content if no npcs exist
             <div className="flex flex-col items-center space-y-4 pt-10">
               <p>No NPC's exist yet.</p>
               <Button asChild>
