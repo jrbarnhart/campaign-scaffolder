@@ -15,6 +15,8 @@ import type { NPC } from "../zodSchemas/npcSchema";
 // For now this just generates random NPC's by selecting random elements from
 // the arrays in characterDefaults.ts
 export default function generateNpc(): NPC {
+  const id = 0; // TODO: Replace with id generation util
+
   const name = `Bob #${Math.floor(Math.random() * 1000).toString()}`;
 
   const race = getRandomArrayElement(defaultRaces) || "Error";
@@ -63,6 +65,7 @@ export default function generateNpc(): NPC {
   const quirk = getRandomArrayElement(defaultQuirks) || "Error";
 
   const npc: NPC = {
+    id,
     name,
     race,
     sex,

@@ -1,6 +1,7 @@
 import type { NPC } from "./zodSchemas/npcSchema";
 
 export const defaultNpc: NPC = {
+  id: -1,
   name: "",
   race: "",
   sex: "",
