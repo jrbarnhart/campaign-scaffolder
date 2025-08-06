@@ -2,7 +2,7 @@ import z from "zod";
 
 export const zRecordId = z
   .number("Must be a number")
-  .min(0, "Must be at least 0")
+  .min(1, "Must be at least 1")
   .int("Must be an integer");
 
 export const zShortString = z
