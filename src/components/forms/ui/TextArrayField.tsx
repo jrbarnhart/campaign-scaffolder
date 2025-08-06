@@ -24,6 +24,7 @@ export function TextArrayField({ label }: { label: string }) {
             <div key={`item-${valueIndex.toString()}`} className="space-y-1">
               <div className="flex items-center gap-2">
                 <Input
+                  name={`${label}-${valueIndex.toString()}`}
                   value={field.state.value[valueIndex] || ""}
                   onChange={(e) => {
                     const newArray = [...field.state.value];
