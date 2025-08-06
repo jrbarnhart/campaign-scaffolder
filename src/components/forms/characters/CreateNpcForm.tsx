@@ -34,6 +34,12 @@ export default function CreateNpcForm({
       className="flex flex-col gap-4"
     >
       <form.AppForm>
+        {/* ID (Hidden) */}
+        <form.AppField
+          name="id"
+          children={(field) => <field.IdField />}
+          validators={{ onSubmit: npcSchema.shape.id }}
+        />
         {/* Name */}
         <form.AppField
           name="name"
