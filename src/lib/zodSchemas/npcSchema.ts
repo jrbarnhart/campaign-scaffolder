@@ -1,24 +1,26 @@
 import { z } from "zod";
-
-const shortString = z.string().trim().min(1).max(64);
-const mediumString = z.string().trim().min(1).max(256);
-const longString = z.string().trim().min(1).max(512);
-
-const abilityScore = z.number().int().min(0).max(30);
+import {
+  zAbilityScore,
+  zLongString,
+  zMediumString,
+  zRecordId,
+  zShortString,
+} from "./schemaComponents";
 
 export const npcSchema = z.object({
-  name: mediumString,
-  sex: shortString,
-  race: shortString,
-  strength: abilityScore,
-  dexterity: abilityScore,
-  constitution: abilityScore,
-  intelligence: abilityScore,
-  wisdom: abilityScore,
-  charisma: abilityScore,
-  alignment: shortString,
-  quirk: longString,
-  personality: z.array(longString),
+  id: zRecordId,
+  name: zMediumString,
+  sex: zShortString,
+  race: zShortString,
+  strength: zAbilityScore,
+  dexterity: zAbilityScore,
+  constitution: zAbilityScore,
+  intelligence: zAbilityScore,
+  wisdom: zAbilityScore,
+  charisma: zAbilityScore,
+  alignment: zShortString,
+  quirk: zLongString,
+  personality: z.array(zLongString),
 });
 
 export type NPC = z.infer<typeof npcSchema>;
