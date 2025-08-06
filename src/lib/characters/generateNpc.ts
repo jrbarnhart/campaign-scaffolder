@@ -12,8 +12,8 @@ import {
 } from "@/lib/characters/characterDefaults";
 import type { NPC } from "../zodSchemas/npcSchema";
 
-// For now this just generates random NPC's by selecting random elements from
-// the arrays in characterDefaults.ts
+// For now this generates random NPC's by selecting random elements from the arrays in characterDefaults.ts
+// Ideally there will be something like archtype templates to help generate more typical characters
 export default function generateNpc(): NPC {
   const id = 0; // TODO: Replace with id generation util
 
