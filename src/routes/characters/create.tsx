@@ -1,6 +1,7 @@
 import NpcInfo from "@/components/characters/NpcInfo";
 import CreateNpcForm from "@/components/forms/characters/CreateNpcForm";
 import { Button } from "@/components/ui/button";
+import useLocalNpcs from "@/contexts/localStorage/npcs/useLocalNpcs";
 import useLocalStorage from "@/hooks/useLocalStorage";
 import generateNpc from "@/lib/characters/generateNpc";
 import { defaultNpc } from "@/lib/defaultData";
@@ -14,6 +15,7 @@ export const Route = createFileRoute("/characters/create")({
 
 function RouteComponent() {
   const [editOpen, setEditOpen] = useState(false);
+  const { localNpcs } = useLocalNpcs();
   const [npc, setNpc] = useLocalStorage({
     key: "draftNpc",
     schema: npcSchema,
@@ -50,7 +52,7 @@ function RouteComponent() {
             <section className="space-y-2">
               <Button
                 onClick={() => {
-                  const newNpc = generateNpc();
+                  const newNpc = generateNpc(localNpcs);
                   setNpc(newNpc);
                 }}
                 variant={"secondary"}
