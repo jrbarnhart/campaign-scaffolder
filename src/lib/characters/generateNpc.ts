@@ -1,4 +1,8 @@
-import { getManyFromArray, getRandomArrayElement } from "../arrayUtils";
+import {
+  getManyFromArray,
+  getNextId,
+  getRandomArrayElement,
+} from "../arrayUtils";
 import {
   defaultAlignments,
   defaultChaoticTraits,
@@ -14,8 +18,8 @@ import type { NPC } from "../zodSchemas/npcSchema";
 
 // For now this generates random NPC's by selecting random elements from the arrays in characterDefaults.ts
 // Ideally there will be something like archtype templates to help generate more typical characters
-export default function generateNpc(): NPC {
-  const id = 0; // TODO: Replace with id generation util
+export default function generateNpc(localNpcs: NPC[]): NPC {
+  const id = getNextId(localNpcs);
 
   const name = `Bob #${Math.floor(Math.random() * 1000).toString()}`;
 
@@ -57,10 +61,7 @@ export default function generateNpc(): NPC {
       possibleTrais = [...defaultChaoticTraits, ...defaultEvilTraits];
       break;
   }
-  const personality = getManyFromArray(
-    possibleTrais,
-    personalityTraitCount,
-  ) || ["Error"];
+  const personality = getManyFromArray(possibleTrais, personalityTraitCount);
 
   const quirk = getRandomArrayElement(defaultQuirks) || "Error";
 
